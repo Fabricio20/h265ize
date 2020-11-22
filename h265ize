@@ -114,6 +114,31 @@ function runCli() {
 
         // Initiate a new Encoder
         let encoder = new Encoder(logger);
+		
+		let hardware = args.hardware;
+		let h264 = args.h264;
+		
+		if (args.vcodec == '') {
+			let target_codec = null;
+			if (hardware) {
+				if (h264) {
+					args.vcodec = 'h264_nvenc';
+				} else {
+					args.vcodec = 'hevc_nvenc';
+				}
+			} else {
+				if (h264) {
+					args.vcodec = 'libx264';
+				} else {
+					args.vcodec = 'libx265';
+				}
+			}
+		}
+		logger.info('Using video codec ' + args.vcodec);
+		if (args.acodec == '') {
+			args.acodec = 'aac';
+		}
+		logger.info('Using audio codec ' + args.acodec);
 
         function shutdown() {
             encoder.stop();
