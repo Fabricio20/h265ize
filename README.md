@@ -31,7 +31,7 @@ If you have any questions or h265ize isn't working for you, feel free to open an
 - [Examples](#examples)
 - [Stats file](#stats-file)
 - [Hardware Acceleration](#hardware-acceleration)
-- [Creating 10bit & 12bit encodes](#creating-10bit-&-12bit-encodes)
+- [Creating 10bit & 12bit encodes](#creating-10bit--12bit-encodes)
 
 
 ## Features
